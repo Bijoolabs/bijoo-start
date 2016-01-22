@@ -31,6 +31,7 @@
         "postcss-neat": "^2.4.2",
         "css-mqpacker":"^4.0.0",
         "grunt-critical": "^0.2.0",
+        "grunt-uncss": "^0.4.4",
         "stylelint": "^3.1.4",
         "csswring": "^4.1.1",
         "jit-grunt": "^0.9.1",
