@@ -67,6 +67,16 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/main.js'
             }
         },
+        // Minify your JS files
+        uglify: {
+            options: {
+                banner: "<%%= meta.banner %>"
+            },
+            prod: {
+                src: "<%%= concat.dev.src %>",
+                dest: "<%%= meta.prod.js %>/main.js"
+            }
+        },
         // Grunt PostCSS task
         postcss: {
             options: {
@@ -91,6 +101,17 @@ module.exports = function( grunt ) {
                         browsers: ['> 1%', 'IE 9']
                     }),
                 ]
+            },
+            lint: {
+                options: {
+                    map: false,
+                    processors: [
+                        require( 'stylelint' )({
+                            configFile: "conf/.stylelintrc"
+                        })
+                    ]
+                },
+                src: [ "<%%= meta.dev.css %>/**/*.css" ]
             },
             dev: {
                 src: '<%= meta.dev.less %>/main.css',
@@ -118,6 +139,7 @@ module.exports = function( grunt ) {
         // Minify CSS
         csswring: {
             options : {
+                map: false,
                 removeAllComments: true
             },
             prod: {
@@ -132,6 +154,26 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/main.js'
             }
 
+        },
+        // Process throught phatomJS to create the critical css File
+        critical: {
+            prod: {
+                options: {
+                    // Inline the generated critical-path CSS
+                    // - true generates HTML
+                    // - false generates CSS
+                    inline: false,
+                    width: 1280,
+                    height: 768,
+                    minify: true,
+                    // Extract inlined styles from referenced stylesheets
+                    extract: true,
+                    // ignore some css rules
+                    ignore: ['font-face',/some-regexp/],
+                },
+                src: 'http://getbootstrap.com/',
+                dest: '<%= meta.prod.css %>/critical.css'
+            }
         },
         // Watch and livereload with help of grunt-newer
         watch: {
@@ -153,14 +195,30 @@ module.exports = function( grunt ) {
             template: {
                 files: 'path/to/template/**/*.*'
             }
+        },
+        // Run grunt tasks concurrently
+        concurrent: {
+            base: [ "postcss:dev",
+                    "concat",
+                    "imagemin",
+                    "copy"
+                    ],
+            prod: [ "postcss:prod",
+                    "concat",
+                    "imagemin",
+                    "copy"
+                    ],
+            compress: [ "uglify", "csswring" ],
+            lint: [ "postcss:lint", "eslint" ]
         }
-
     } );
 
     // Default task
-    grunt.registerTask( 'default', ['clean', 'postcss:dev', 'concat', 'copy', 'imagemin' ] );
+    grunt.registerTask( "default", [ "concurrent:base" ]);
+
     // Lint task
-    grunt.registerTask( 'lint', [ 'eslint' ] );
+    grunt.registerTask( "lint", [ "concurrent:lint" ] );
+
     // Prod task
-    grunt.registerTask( 'prod', ['clean', 'postcss:prod', 'csswring', 'criticalcss', 'concat', 'uglify', 'copy', 'imagemin' ] );
+    grunt.registerTask( "prod", [ "clean", "concurrent:prod", "concurrent:compress", "critical" ]);
 };

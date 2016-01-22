@@ -1,5 +1,5 @@
 # Build files folder
-dist/
+build/
 
 # npm package folder
 node_modules/
