@@ -17,7 +17,7 @@ module.exports = function( grunt ) {
             banner: '/*! <%= pkg.name %> - v<%= pkg.version %> - <%= meta.day %> <%= meta.hour %> */\n',
             dev: {
                 assets: 'app',
-                less: '<%= meta.dev.assets %>/styles',
+                css: '<%= meta.dev.assets %>/styles',
                 js: '<%= meta.dev.assets %>/scripts',
                 img: '<%= meta.dev.assets %>/images',
                 fonts: '<%= meta.dev.assets %>/fonts'
@@ -111,17 +111,17 @@ module.exports = function( grunt ) {
                         })
                     ]
                 },
-                src: [ "<%%= meta.dev.css %>/**/*.css" ]
+                src: [ "<%= meta.dev.css %>/**/*.css" ]
             },
             dev: {
-                src: '<%= meta.dev.less %>/main.css',
+                src: '<%= meta.dev.css %>/main.css',
                 dest: '<%= meta.prod.css %>/main.css'
             },
             prod: {
                 options: {
                     map: false
                 },
-                src: '<%= meta.dev.less %>/main.less',
+                src: '<%= meta.dev.css %>/main.css',
                 dest: '<%= meta.prod.css %>/main.css'
             }
         },
