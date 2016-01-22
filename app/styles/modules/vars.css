@@ -1,0 +1,13 @@
+/* custom properties */
+:root {
+    --fontSize: 1rem;
+    --mainColor: #123456;
+    --color_error: red;
+    --highlightColor: rgba(215, 68, 118, 0.9);
+}
+
+/* custom media queries */
+@custom-media --viewport-desktop (width >= 980px);
+
+/* custom selectors */
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;
