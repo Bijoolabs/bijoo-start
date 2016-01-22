@@ -143,7 +143,7 @@ module.exports = function( grunt ) {
                 removeAllComments: true
             },
             prod: {
-                src: '<%= postcss.dev.dest %>',
+                src: '<%= postcss.prod.dest %>',
                 dest: '<%= meta.prod.css %>/main.css'
             }
         },
