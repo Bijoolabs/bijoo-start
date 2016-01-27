@@ -51,11 +51,11 @@ Bijoostrap is based on [BEM](https://en.bem.info/method/) (Block, Element, Modif
 
 To specify a child block, add an underscore caracter "_" followed by one of the next uppercase letter :
 
-* H pour Header
-* C pour Content
-* M pour Main
-* I pour inner
-* F pour Footer
+* H for Header
+* C for Content
+* M for Main
+* I for inner
+* F for Footer
 
 Here is the naming convention :
 
