@@ -1,3 +1,5 @@
+// add require to global namespace for eslint
+/*global require*/
 // Load common vendor and app modules
 require([
     // Vendor
@@ -22,9 +24,9 @@ require([
         option_4: function(){ // Function
             return this.option_1; // Previous defined var
         }
-    }
+    };
 
-    PROJECT_NAMESPACE.init = function(){}
+    PROJECT_NAMESPACE.init = function(){};
 
     PROJECT_NAMESPACE.init();
 });
