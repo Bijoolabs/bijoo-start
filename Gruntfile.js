@@ -55,28 +55,6 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/vendor/'
             }
         },
-        // Concat JS files
-        concat: {
-            options: {
-                sourceMap: true
-            },
-            dev: {
-                src: [ '<%= meta.dev.js %>/plugin/*.js',
-                    '<%= meta.dev.js %>/main.js'
-                ],
-                dest: '<%= meta.prod.js %>/main.js'
-            }
-        },
-        // Minify your JS files
-        uglify: {
-            options: {
-                banner: "<%%= meta.banner %>"
-            },
-            prod: {
-                src: "<%%= concat.dev.src %>",
-                dest: "<%%= meta.prod.js %>/main.js"
-            }
-        },
         // Grunt PostCSS task
         postcss: {
             options: {
@@ -147,13 +125,27 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/main.css'
             }
         },
-        // Minify JS files
-        uglify: {
-            prod: {
-                src: '<%= concat.dev.src %>',
+        // Concat JS
+        concat: {
+            options: {
+                sourceMap: true
+            },
+            dev: {
+                src: [ '<%= meta.dev.js %>/plugin/*.js',
+                    '<%= meta.dev.js %>/main.js'
+                ],
                 dest: '<%= meta.prod.js %>/main.js'
             }
-
+        },
+        // Minify JS
+        uglify: {
+            options: {
+                banner: "<%%= meta.banner %>"
+            },
+            prod: {
+                src: "<%%= concat.dev.src %>",
+                dest: "<%%= meta.prod.js %>/main.js"
+            }
         },
         // Process throught phatomJS to create the critical css File
         critical: {
