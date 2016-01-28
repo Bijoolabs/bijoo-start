@@ -1,3 +1,9 @@
+/**
+ *  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum semper risus, at egestas
+ *  Vestibulum et volutpat purus, ultrices scelerisque nisl. Quisque suscipit risus et placerat interdum neque sagittis
+ *  Nunc ex mauris, malesuada sit amet elit quis.
+ */
+
 html {
     box-sizing: border-box;
     font-size:62.5%;
@@ -18,7 +24,6 @@ body {
 *, *:before, *:after {
     box-sizing: inherit;
 }
-
 
 hr {
     visibility: hidden;
@@ -83,6 +88,21 @@ body {
     padding: calc((var(--fontSize) / 2) + 1px);
 }
 
+/* Layout
+   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+.wrapper {}
+
+.container {
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+.mainContent {}
+.innerContainer {}
+.innerContent {}
+
 /* Titles
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -107,6 +127,7 @@ body {
 /* Custom Selector usage */
 :--heading { margin-top: 0 }
 
+
 /* Links
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
@@ -122,14 +143,14 @@ body {
 /* Lists
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-.list1 {
+.lst1 {
     margin-bottom: 20px;
     & > li {
         &:first-child { margin-top: 0; }
     }
 }
 
-/* Others
+/* Various
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .hr1 {
@@ -138,20 +159,8 @@ body {
     margin-bottom: 20px;
 }
 
-/* Usefull
+/* Fix
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-
-.mb10 { margin-bottom:10px !important; }
-.mb20 { margin-bottom:20px !important; }
-.mb30 { margin-bottom:30px !important; }
-.mb40 { margin-bottom:40px !important; }
-.pb20 { padding-bottom:20px !important; }
-.left { text-align: left; }
-.center { text-align: center; }
-.right { text-align: right; }
-.last { margin-bottom: 0 !important; }
-.first { margin-top: 0 !important; padding-top: 0 !important; }
-.hidden { display: none; }
 
 .visuallyhidden {
     position: absolute;
@@ -164,16 +173,14 @@ body {
     border: 0 none;
 }
 
-.clearfix:after {
-    display: block;
-    visibility: hidden;
-    clear: both;
-    height: 0;
-    content: '\0020';
+/* 
+    Last clearfix version
+    https://css-tricks.com/snippets/css/clear-fix/
+*/
+.group:after {
+  content: "";
+  display: table;
+  clear: both;
 }
-
-.clearfix { display: inline-block; }
-/* \*/ * html .clearfix { height: 1%; }
-.clearfix { display: block; }
 
 .bijoo { visibility: visible !important; }
