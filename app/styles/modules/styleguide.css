@@ -15,20 +15,14 @@ body {
 }
 
 body {
-    font: 1.2em/1.6em Verdana, sans-serif;
-    background-color: #fff;
-    color: var(--mainColor);
+    font: 1.2em/1.6em Arial, sans-serif;
+    background-color: #FFF;
+    color: #000;
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* Apply a natural box layout model to all elements, but allowing components to change */
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-hr {
-    visibility: hidden;
-    position: absolute;
-    top: -9999px;
 }
 
 a {
@@ -39,6 +33,12 @@ a {
 p {
     line-height: 2rem;
     margin-bottom: 20px;
+}
+
+hr {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
 }
 
 sup,
@@ -80,23 +80,15 @@ time { display: inline-block; }
 /* Chrome outline */
 *:focus { outline: none; }
 
-/* some var() & calc() */
-body {
-    color: var(--mainColor);
-    font-size: var(--fontSize);
-    line-height: calc(var(--fontSize) * 1.5);
-    padding: calc((var(--fontSize) / 2) + 1px);
-}
-
 /* Layout
    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .wrapper {}
 
 .container {
-    max-width: 980px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 .mainContent {}
