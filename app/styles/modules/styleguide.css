@@ -1,7 +1,8 @@
 /**
- *  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum semper risus, at egestas
- *  Vestibulum et volutpat purus, ultrices scelerisque nisl. Quisque suscipit risus et placerat interdum neque sagittis
- *  Nunc ex mauris, malesuada sit amet elit quis.
+ *  This is the styleguide stylesheet.
+ *  It's must be used only to define elements taht are present in the designer's styleguide.
+ *  If it's possible, use the MDCSS - based on Markdown syntax to comment your element.
+ *  @border-image-source:  : https://github.com/jonathantneal/mdcss;
  */
 
 html {
@@ -88,8 +89,8 @@ body {
     padding: calc((var(--fontSize) / 2) + 1px);
 }
 
-/* Layout
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Layout
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .wrapper {}
 
@@ -103,8 +104,8 @@ body {
 .innerContainer {}
 .innerContent {}
 
-/* Titles
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Titles
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .tl1 {
     font-size: 3rem;
@@ -128,20 +129,20 @@ body {
 :--heading { margin-top: 0 }
 
 
-/* Links
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Links
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .lk {
 }
 
-/* Buttons
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Buttons
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .btn1 {
 }
 
-/* Lists
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Lists
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .lst1 {
     margin-bottom: 20px;
@@ -150,8 +151,8 @@ body {
     }
 }
 
-/* Various
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Various
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .hr1 {
     height: 1px;
@@ -159,8 +160,8 @@ body {
     margin-bottom: 20px;
 }
 
-/* Fix
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Fix
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .visuallyhidden {
     position: absolute;
