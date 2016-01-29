@@ -2,6 +2,11 @@
 /*  Custom properties
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
+    /* 
+        Usage name for your styles : 
+        color: var(--varColorName);
+        line-height: calc(var(--fontSize) * 1.5);
+    */
     :root {
         --fontSize: 1rem;
         --mainColor: #123456;
