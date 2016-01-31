@@ -5,9 +5,13 @@
 
 form {
 
-    fieldset { border: 0; }
+    fieldset {
+        border: 0;
+    }
 
-    textarea { resize: vertical; }
+    textarea {
+        resize: vertical;
+    }
 
     legend {
         visibility: hidden;

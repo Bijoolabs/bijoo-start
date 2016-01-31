@@ -7,7 +7,7 @@
 
 html {
     box-sizing: border-box;
-    font-size:62.5%;
+    font-size: 62.5%;
 }
 
 html,
@@ -51,22 +51,34 @@ sub {
     line-height: 1rem;
 }
 
-sup { bottom: 1ex; }
+sup {
+    bottom: 1ex;
+}
 
-sub { top: .5ex; }
+sub {
+    top: .5ex;
+}
 
-strong { font-weight :bold; }
+strong {
+    font-weight: bold;
+}
 
-em { font-style: italic; }
+em {
+    font-style: italic;
+}
 
-address { line-height: 2rem; }
+address {
+    line-height: 2rem;
+}
 
 video {
     display: block;
     width: 100%;
 }
 
-time { display: inline-block; }
+time {
+    display: inline-block;
+}
 
 ::-moz-selection {
     text-shadow: none;
@@ -79,11 +91,12 @@ time { display: inline-block; }
 }
 
 /* Chrome outline */
-*:focus { outline: none; }
+*:focus {
+    outline: none;
+}
 
 /*  Layout
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
->>>>>>> c1a41382a3fde5970586d8ad54710a4d9ca7c156
 
 .wrapper {}
 
@@ -119,7 +132,9 @@ time { display: inline-block; }
 }
 
 /* Custom Selector usage */
-:--heading { margin-top: 0 }
+:--heading {
+    margin-top: 0;
+}
 
 
 /*  Links
@@ -140,7 +155,9 @@ time { display: inline-block; }
 .lst1 {
     margin-bottom: 20px;
     & > li {
-        &:first-child { margin-top: 0; }
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
@@ -167,14 +184,16 @@ time { display: inline-block; }
     border: 0 none;
 }
 
-/* 
+/*
     Last clearfix version
     https://css-tricks.com/snippets/css/clear-fix/
 */
 .group:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.bijoo { visibility: visible !important; }
+.bijoo {
+    visibility: visible !important;
+}
