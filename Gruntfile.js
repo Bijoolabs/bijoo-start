@@ -48,11 +48,11 @@ module.exports = function( grunt ) {
                 src: [ '*.{eot,svg,ttf,otf,woff,woff2}' ], // Actual patterns to match
                 dest: '<%= meta.prod.fonts %>/' // Destination path prefix
             },
-            jsvendor: {
+            js: {
                 expand: true,
-                cwd: '<%= meta.dev.js %>/vendor/',
-                src: [ '*.js' ],
-                dest: '<%= meta.prod.js %>/vendor/'
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
             },
             images: {
                 expand: true,
@@ -139,18 +139,6 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/main.css'
             }
         },
-        // Concat JS
-        concat: {
-            options: {
-                sourceMap: true
-            },
-            dev: {
-                src: [ '<%= meta.dev.js %>/plugin/*.js',
-                    '<%= meta.dev.js %>/main.js'
-                ],
-                dest: '<%= meta.prod.js %>/main.js'
-            }
-        },
         // Minify JS
         uglify: {
             options: {
@@ -205,14 +193,11 @@ module.exports = function( grunt ) {
         // Run grunt tasks concurrently
         concurrent: {
             base: [ "postcss:dev",
-                    "concat",
                     "copy"
                     ],
             prod: [ "postcss:prod",
-                    "concat",
                     "imagemin",
-                    "copy:font",
-                    "copy:jsvendor"
+                    "copy:font"
                     ],
             compress: [ "uglify", "csswring" ],
             lint: [ "postcss:lint", "eslint" ]
