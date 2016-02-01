@@ -53,6 +53,12 @@ module.exports = function( grunt ) {
                 cwd: '<%= meta.dev.js %>/vendor/',
                 src: [ '*.js' ],
                 dest: '<%= meta.prod.js %>/vendor/'
+            },
+            images: {
+                expand: true,
+                cwd: '<%= meta.dev.img %>/',
+                src: [ '**/*.*' ],
+                dest: '<%= meta.prod.img %>/'
             }
         },
         // Grunt PostCSS task
@@ -186,7 +192,7 @@ module.exports = function( grunt ) {
             },
             image: {
                 files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg}',
-                tasks: [ 'newer:imagemin:images' ]
+                tasks: [ 'newer:copy:images' ]
             },
             css: {
                 files: ['<%= meta.dev.css %>/main.css', '<%= meta.dev.css %>/**/layout.css', '<%= meta.dev.css %>/**/*.css'],
@@ -200,13 +206,13 @@ module.exports = function( grunt ) {
         concurrent: {
             base: [ "postcss:dev",
                     "concat",
-                    "imagemin",
                     "copy"
                     ],
             prod: [ "postcss:prod",
                     "concat",
                     "imagemin",
-                    "copy"
+                    "copy:font",
+                    "copy:jsvendor"
                     ],
             compress: [ "uglify", "csswring" ],
             lint: [ "postcss:lint", "eslint" ]
