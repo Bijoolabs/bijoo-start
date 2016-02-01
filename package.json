@@ -35,7 +35,7 @@
         "postcss-quantity-queries": "^0.4.0",
         "postcss-selector-matches": "^2.0.1",
         "postcss-selector-not": "^2.0.0",
-        "stylelint": "^4.1.0",
+        "stylelint": "^4.2.0",
         "time-grunt": "^1.3.0"
     }
 }

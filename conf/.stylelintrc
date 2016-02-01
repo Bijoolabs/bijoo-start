@@ -33,11 +33,11 @@
                     "margin",
                     "border",
                     "padding"
-                ]
-            },
-            {
-                emptyLineBefore: true,
-                unspecified: "bottom"
+                ],
+                {
+                    emptyLineBefore: true,
+                    unspecified: "bottom"
+                }
             }
         ]
     }
