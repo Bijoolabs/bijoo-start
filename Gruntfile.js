@@ -77,7 +77,7 @@ module.exports = function( grunt ) {
                     require("css-mqpacker")(),
                     require('autoprefixer')({
                         browsers: ['> 1%', 'IE 9']
-                    }),
+                    })
                 ]
             },
             lint: {
@@ -87,6 +87,14 @@ module.exports = function( grunt ) {
                         require( 'stylelint' )({
                             configFile: "conf/.stylelintrc"
                         })
+                    ]
+                },
+                src: [ "<%= meta.dev.css %>/**/*.css" ]
+            },
+            docs: {
+                options: {
+                    processors: [
+                        require('mdcss')
                     ]
                 },
                 src: [ "<%= meta.dev.css %>/**/*.css" ]
