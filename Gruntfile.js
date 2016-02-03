@@ -123,7 +123,7 @@ module.exports = function( grunt ) {
                 files: [ {
                     expand: true,
                     cwd: '<%= meta.dev.img %>/',
-                    src: [ '**/*.{png,jpg,gif,svg}' ],
+                    src: [ '**/*.{png,jpg,gif,svg,ico}' ],
                     dest: '<%= meta.prod.img %>/'
                 } ]
             }
@@ -142,11 +142,13 @@ module.exports = function( grunt ) {
         // Minify JS
         uglify: {
             options: {
-                banner: "<%%= meta.banner %>"
+                banner: "<%= meta.banner %>"
             },
             prod: {
-                src: "<%%= concat.dev.src %>",
-                dest: "<%%= meta.prod.js %>/main.js"
+                expand: true,
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
             }
         },
         // Process throught phatomJS to create the critical css File
@@ -179,11 +181,11 @@ module.exports = function( grunt ) {
                 tasks: [ 'newer:concat:dev' ]
             },
             image: {
-                files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg}',
+                files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg,ico}',
                 tasks: [ 'newer:copy:images' ]
             },
             css: {
-                files: ['<%= meta.dev.css %>/main.css', '<%= meta.dev.css %>/**/layout.css', '<%= meta.dev.css %>/**/*.css'],
+                files: ['<%= meta.dev.css %>/main.css', '<%= meta.dev.css %>/**/*.css'],
                 tasks: [ 'postcss:dev' ]
             },
             template: {
