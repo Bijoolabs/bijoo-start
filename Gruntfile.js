@@ -76,13 +76,13 @@ module.exports = function( grunt ) {
                     require('postcss-color-function'),
                     require('postcss-selector-matches'),
                     require('postcss-selector-not'),
-                    require('postcss-neat')({
-                        neatMaxWidth: '100%'
-                    }),
                     require('postcss-nested'),
                     require("css-mqpacker")(),
                     require('autoprefixer')({
                         browsers: ['> 1%', 'IE 9']
+                    }),
+                    require('postcss-neat')({
+                        neatMaxWidth: '100%'
                     })
                 ]
             },
@@ -177,8 +177,8 @@ module.exports = function( grunt ) {
                 livereload: 6325
             },
             js: {
-                files: [ '<%= meta.dev.js %>/main.js', '<%= meta.dev.js %>/plugins/*.js' ],
-                tasks: [ 'newer:concat:dev' ]
+                files: [ '<%= meta.dev.js %>/main.js', '<%= meta.dev.js %>/modules/*.js' ],
+                tasks: [ 'newer:copy:js' ]
             },
             image: {
                 files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg,ico}',
