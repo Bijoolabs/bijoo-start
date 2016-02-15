@@ -20,6 +20,8 @@ Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool 
 ```shell
 npm install -g grunt-cli
 ```
+* (Optional) Install [PhantomJS](http://phantomjs.org/download.html)
+Run installer.exe
 * Install the npm dependencies
 ```shellss
 cd path/to/project
@@ -40,7 +42,7 @@ grunt
 ```shellss
 grunt lint
 ```
-* GRUNT PRDO : to clean, postCSS, uglify; concat, critical CSS, copy and images optimization.
+* GRUNT PROD : to clean, postCSS, uglify, concat, critical CSS, copy and images optimization.
 ```shellss
 grunt prod
 ```

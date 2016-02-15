@@ -1,7 +1,7 @@
 // add require to global namespace for eslint
 /*global require*/
 // Load common vendor and app modules
-require([
+define([
     // Vendor
     'jquery',
 
@@ -11,7 +11,7 @@ require([
     //modules
     'commonModule'
 
-], function ( $, window, document, undefined) {
+], function () {
     'use strict';
 
     // Init project namespace

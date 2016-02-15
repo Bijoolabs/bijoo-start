@@ -1,12 +1,13 @@
 /**
- *  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur bibendum semper risus, at egestas
- *  Vestibulum et volutpat purus, ultrices scelerisque nisl. Quisque suscipit risus et placerat interdum neque sagittis
- *  Nunc ex mauris, malesuada sit amet elit quis.
+ *  This is the styleguide stylesheet.
+ *  It's must be used only to define elements taht are present in the designer's styleguide.
+ *  If it's possible, use the MDCSS - based on Markdown syntax to comment your element.
+ *  @border-image-source:  : https://github.com/jonathantneal/mdcss;
  */
 
 html {
     box-sizing: border-box;
-    font-size:62.5%;
+    font-size: 62.5%;
 }
 
 html,
@@ -15,20 +16,14 @@ body {
 }
 
 body {
-    font: 1.2em/1.6em Verdana, sans-serif;
-    background-color: #fff;
-    color: var(--mainColor);
+    font: 1.2em/1.6em Arial, sans-serif;
+    background-color: #FFF;
+    color: #000;
 }
 
-/* apply a natural box layout model to all elements, but allowing components to change */
+/* Apply a natural box layout model to all elements, but allowing components to change */
 *, *:before, *:after {
     box-sizing: inherit;
-}
-
-hr {
-    visibility: hidden;
-    position: absolute;
-    top: -9999px;
 }
 
 a {
@@ -41,6 +36,12 @@ p {
     margin-bottom: 20px;
 }
 
+hr {
+    visibility: hidden;
+    position: absolute;
+    top: -9999px;
+}
+
 sup,
 sub {
     position: relative;
@@ -50,22 +51,34 @@ sub {
     line-height: 1rem;
 }
 
-sup { bottom: 1ex; }
+sup {
+    bottom: 1ex;
+}
 
-sub { top: .5ex; }
+sub {
+    top: .5ex;
+}
 
-strong { font-weight :bold; }
+strong {
+    font-weight: bold;
+}
 
-em { font-style: italic; }
+em {
+    font-style: italic;
+}
 
-address { line-height: 2rem; }
+address {
+    line-height: 2rem;
+}
 
 video {
     display: block;
     width: 100%;
 }
 
-time { display: inline-block; }
+time {
+    display: inline-block;
+}
 
 ::-moz-selection {
     text-shadow: none;
@@ -78,33 +91,27 @@ time { display: inline-block; }
 }
 
 /* Chrome outline */
-*:focus { outline: none; }
-
-/* some var() & calc() */
-body {
-    color: var(--mainColor);
-    font-size: var(--fontSize);
-    line-height: calc(var(--fontSize) * 1.5);
-    padding: calc((var(--fontSize) / 2) + 1px);
+*:focus {
+    outline: none;
 }
 
-/* Layout
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Layout
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .wrapper {}
 
 .container {
-    max-width: 980px;
+    max-width: 1280px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 20px;
 }
 
 .mainContent {}
 .innerContainer {}
 .innerContent {}
 
-/* Titles
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Titles
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .tl1 {
     font-size: 3rem;
@@ -125,33 +132,37 @@ body {
 }
 
 /* Custom Selector usage */
-:--heading { margin-top: 0 }
+:--heading {
+    margin-top: 0;
+}
 
 
-/* Links
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Links
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .lk {
 }
 
-/* Buttons
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Buttons
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .btn1 {
 }
 
-/* Lists
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Lists
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .lst1 {
     margin-bottom: 20px;
     & > li {
-        &:first-child { margin-top: 0; }
+        &:first-child {
+            margin-top: 0;
+        }
     }
 }
 
-/* Various
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Various
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .hr1 {
     height: 1px;
@@ -159,8 +170,8 @@ body {
     margin-bottom: 20px;
 }
 
-/* Fix
-   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+/*  Fix
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .visuallyhidden {
     position: absolute;
@@ -173,14 +184,16 @@ body {
     border: 0 none;
 }
 
-/* 
+/*
     Last clearfix version
     https://css-tricks.com/snippets/css/clear-fix/
 */
 .group:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }
 
-.bijoo { visibility: visible !important; }
+.bijoo {
+    visibility: visible !important;
+}

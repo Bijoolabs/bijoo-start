@@ -1,31 +1,36 @@
 
 /*  Custom properties
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-    :root {
-        --fontSize: 1rem;
-        --mainColor: #123456;
-        --color_error: red;
-        --highlightColor: rgba(215, 68, 118, 0.9);
-    }
+/*
+    Usage name for your styles :
+    color: var(--varColorName);
+    line-height: calc(var(--fontSize) * 1.5);
+*/
+:root {
+    --fontSize: 1rem;
+    --mainColor: #123456;
+    --color_error: red;
+    --highlightColor: rgba(215, 68, 118, 0.9);
+}
 
 /*  Custom media queries
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
-    @custom-media --viewport-large (width >= 980px);
-    /* Usage name for your styles : @media (--viewport-large) {} */
+@custom-media --viewport-large (width >= 980px);
+/* Usage name for your styles : @media (--viewport-large) {} */
 
-    @custom-media --viewport-medium (width >= 768px);
-    /* Usage name for your styles : @media (--viewport-medium) {} */
+@custom-media --viewport-medium (width >= 768px);
+/* Usage name for your styles : @media (--viewport-medium) {} */
 
-    @custom-media --viewport-small (width >= 620px);
-    /* Usage name for your styles : @media (--viewport-small) {} */
+@custom-media --viewport-small (width >= 620px);
+/* Usage name for your styles : @media (--viewport-small) {} */
 
-    @custom-media --viewport-extraSmall (width >= 480px);
-    /* Usage name for your styles : @media (--viewport-extraSmall) {} */
+@custom-media --viewport-extraSmall (width >= 480px);
+/* Usage name for your styles : @media (--viewport-extraSmall) {} */
 
 
 /*  Custom selectors
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-    
-    @custom-selector :--heading h1, h2, h3, h4, h5, h6;
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+@custom-selector :--heading h1, h2, h3, h4, h5, h6;

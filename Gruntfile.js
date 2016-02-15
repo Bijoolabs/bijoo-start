@@ -48,11 +48,17 @@ module.exports = function( grunt ) {
                 src: [ '*.{eot,svg,ttf,otf,woff,woff2}' ], // Actual patterns to match
                 dest: '<%= meta.prod.fonts %>/' // Destination path prefix
             },
-            jsvendor: {
+            js: {
                 expand: true,
-                cwd: '<%= meta.dev.js %>/vendor/',
-                src: [ '*.js' ],
-                dest: '<%= meta.prod.js %>/vendor/'
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
+            },
+            images: {
+                expand: true,
+                cwd: '<%= meta.dev.img %>/',
+                src: [ '**/*.*' ],
+                dest: '<%= meta.prod.img %>/'
             }
         },
         // Grunt PostCSS task
@@ -70,14 +76,14 @@ module.exports = function( grunt ) {
                     require('postcss-color-function'),
                     require('postcss-selector-matches'),
                     require('postcss-selector-not'),
-                    require('postcss-neat')({
-                        neatMaxWidth: '100%'
-                    }),
                     require('postcss-nested'),
                     require("css-mqpacker")(),
                     require('autoprefixer')({
                         browsers: ['> 1%', 'IE 9']
                     }),
+                    require('postcss-neat')({
+                        neatMaxWidth: '100%'
+                    })
                 ]
             },
             lint: {
@@ -87,6 +93,14 @@ module.exports = function( grunt ) {
                         require( 'stylelint' )({
                             configFile: "conf/.stylelintrc"
                         })
+                    ]
+                },
+                src: [ "<%= meta.dev.css %>/**/*.css" ]
+            },
+            docs: {
+                options: {
+                    processors: [
+                        require('mdcss')
                     ]
                 },
                 src: [ "<%= meta.dev.css %>/**/*.css" ]
@@ -109,7 +123,7 @@ module.exports = function( grunt ) {
                 files: [ {
                     expand: true,
                     cwd: '<%= meta.dev.img %>/',
-                    src: [ '**/*.{png,jpg,gif,svg}' ],
+                    src: [ '**/*.{png,jpg,gif,svg,ico}' ],
                     dest: '<%= meta.prod.img %>/'
                 } ]
             }
@@ -125,26 +139,16 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/main.css'
             }
         },
-        // Concat JS
-        concat: {
-            options: {
-                sourceMap: true
-            },
-            dev: {
-                src: [ '<%= meta.dev.js %>/plugin/*.js',
-                    '<%= meta.dev.js %>/main.js'
-                ],
-                dest: '<%= meta.prod.js %>/main.js'
-            }
-        },
         // Minify JS
         uglify: {
             options: {
-                banner: "<%%= meta.banner %>"
+                banner: "<%= meta.banner %>"
             },
             prod: {
-                src: "<%%= concat.dev.src %>",
-                dest: "<%%= meta.prod.js %>/main.js"
+                expand: true,
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
             }
         },
         // Process throught phatomJS to create the critical css File
@@ -173,15 +177,15 @@ module.exports = function( grunt ) {
                 livereload: 6325
             },
             js: {
-                files: [ '<%= meta.dev.js %>/main.js', '<%= meta.dev.js %>/plugins/*.js' ],
-                tasks: [ 'newer:concat:dev' ]
+                files: [ '<%= meta.dev.js %>/main.js', '<%= meta.dev.js %>/modules/*.js' ],
+                tasks: [ 'newer:copy:js' ]
             },
             image: {
-                files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg}',
-                tasks: [ 'newer:imagemin:images' ]
+                files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg,ico}',
+                tasks: [ 'newer:copy:images' ]
             },
             css: {
-                files: ['<%= meta.dev.css %>/main.css', '<%= meta.dev.css %>/**/layout.css', '<%= meta.dev.css %>/**/*.css'],
+                files: ['<%= meta.dev.css %>/main.css', '<%= meta.dev.css %>/**/*.css'],
                 tasks: [ 'postcss:dev' ]
             },
             template: {
@@ -191,14 +195,11 @@ module.exports = function( grunt ) {
         // Run grunt tasks concurrently
         concurrent: {
             base: [ "postcss:dev",
-                    "concat",
-                    "imagemin",
                     "copy"
                     ],
             prod: [ "postcss:prod",
-                    "concat",
                     "imagemin",
-                    "copy"
+                    "copy:font"
                     ],
             compress: [ "uglify", "csswring" ],
             lint: [ "postcss:lint", "eslint" ]
