@@ -13,6 +13,12 @@ require.config({
 
         // Modules
         commonModule: 'modules/common_module' // Set your modules here
+    },
+
+    shim: {
+        jquery: {
+          exports: 'jQuery'
+        }
     }
 });
 
