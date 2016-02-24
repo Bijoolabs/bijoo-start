@@ -21,7 +21,6 @@
     "grunt-postcss": "^0.7.2",
     "grunt-uncss": "^0.4.4",
     "jit-grunt": "^0.10.0",
-    "mdcss": "^1.5.1",
     "postcss": "^5.0.16",
     "postcss-calc": "^5.2.0",
     "postcss-color-function": "^2.0.0",
