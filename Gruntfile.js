@@ -171,6 +171,18 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/critical.css'
             }
         },
+        babel: {
+            options: {
+                sourceMap: true,
+                presets: ['es2015']
+            },
+            prod: {
+                expand: true,
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
+            }
+        },
         // Watch and livereload with help of grunt-newer
         watch: {
             options: {
@@ -201,7 +213,7 @@ module.exports = function( grunt ) {
                     "imagemin",
                     "copy:font"
                     ],
-            compress: [ "uglify", "csswring" ],
+            compress: [ "babel", "csswring" ],
             lint: [ "postcss:lint", "eslint" ]
         }
     } );
