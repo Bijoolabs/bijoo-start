@@ -97,14 +97,6 @@ module.exports = function( grunt ) {
                 },
                 src: [ "<%= meta.dev.css %>/**/*.css" ]
             },
-            docs: {
-                options: {
-                    processors: [
-                        require('mdcss')
-                    ]
-                },
-                src: [ "<%= meta.dev.css %>/**/*.css" ]
-            },
             dev: {
                 src: '<%= meta.dev.css %>/main.css',
                 dest: '<%= meta.prod.css %>/main.css'
@@ -151,6 +143,19 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/'
             }
         },
+        systemjs: {
+            options: {
+                sfx: true,
+                configFile:'./build/scripts/build.js',
+                minify: true
+            },
+            prod: {
+                expand: true,
+                cwd: '<%= meta.dev.js %>/',
+                src: [ '**/*.js' ],
+                dest: '<%= meta.prod.js %>/'
+            }
+        },
         // Process throught phatomJS to create the critical css File
         critical: {
             prod: {
@@ -183,6 +188,17 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/'
             }
         },
+        connect: {
+            server: {
+                options: {
+                    open: true,
+                    protocol: 'http',
+                    hostname: 'localhost',
+                    port: 8080,
+                    livereload: 6325
+                }
+            }
+        },
         // Watch and livereload with help of grunt-newer
         watch: {
             options: {
@@ -190,7 +206,7 @@ module.exports = function( grunt ) {
             },
             js: {
                 files: [ '<%= meta.dev.js %>/main.js', '<%= meta.dev.js %>/modules/*.js' ],
-                tasks: [ 'newer:copy:js' ]
+                tasks: [ 'newer:babel' ]
             },
             image: {
                 files: '<%= meta.dev.img %>/**/*.{png,jpg,gif,svg,ico}',
@@ -218,8 +234,14 @@ module.exports = function( grunt ) {
         }
     } );
 
+
+    grunt.loadNpmTasks("grunt-systemjs-builder");
+
     // Default task
     grunt.registerTask( "default", [ "concurrent:base" ]);
+
+    // Server task : launch a web server, open in browser, start watch and livereload
+    grunt.registerTask( "server", [ "connect:server", "watch"]);
 
     // Lint task
     grunt.registerTask( "lint", [ "concurrent:lint" ] );
