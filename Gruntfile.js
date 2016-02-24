@@ -171,6 +171,18 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/critical.css'
             }
         },
+        // Start a simple webserver
+        connect: {
+            server: {
+                options: {
+                    open: true,
+                    protocol: 'http',
+                    hostname: 'localhost',
+                    port: 8080,
+                    livereload: 6325
+                }
+            }
+        },
         // Watch and livereload with help of grunt-newer
         watch: {
             options: {
@@ -208,6 +220,9 @@ module.exports = function( grunt ) {
 
     // Default task
     grunt.registerTask( "default", [ "concurrent:base" ]);
+
+    // Server task : launch a web server, open in browser, start watch and livereload
+    grunt.registerTask( "server", [ "connect:server", "watch"]);
 
     // Lint task
     grunt.registerTask( "lint", [ "concurrent:lint" ] );
