@@ -143,19 +143,6 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.js %>/'
             }
         },
-        systemjs: {
-            options: {
-                sfx: true,
-                configFile:'./build/scripts/build.js',
-                minify: true
-            },
-            prod: {
-                expand: true,
-                cwd: '<%= meta.dev.js %>/',
-                src: [ '**/*.js' ],
-                dest: '<%= meta.prod.js %>/'
-            }
-        },
         // Process throught phatomJS to create the critical css File
         critical: {
             prod: {
@@ -176,12 +163,15 @@ module.exports = function( grunt ) {
                 dest: '<%= meta.prod.css %>/critical.css'
             }
         },
-        babel: {
+        browserify: {
             options: {
-                sourceMap: true,
-                presets: ['es2015']
+                transform: [
+                    ["babelify", {
+                        presets: ["es2015"]
+                    }]
+                ]
             },
-            prod: {
+            dist: {
                 expand: true,
                 cwd: '<%= meta.dev.js %>/',
                 src: [ '**/*.js' ],
@@ -233,9 +223,6 @@ module.exports = function( grunt ) {
             lint: [ "postcss:lint", "eslint" ]
         }
     } );
-
-
-    grunt.loadNpmTasks("grunt-systemjs-builder");
 
     // Default task
     grunt.registerTask( "default", [ "concurrent:base" ]);
