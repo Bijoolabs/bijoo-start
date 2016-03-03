@@ -8,6 +8,8 @@ module.exports = function( grunt ) {
     // load all task listed and speed up build process
     require( 'jit-grunt' )( grunt );
 
+    var shims = require("./shims");
+
     // Project configuration
     grunt.initConfig( {
         pkg: grunt.file.readJSON( 'package.json' ),
@@ -166,16 +168,14 @@ module.exports = function( grunt ) {
         browserify: {
             options: {
                 transform: [
-                    ["babelify", {
-                        presets: ["es2015"]
+                    ['babelify', {
+                        presets: ['es2015']
                     }]
                 ]
             },
             dist: {
-                expand: true,
-                cwd: '<%= meta.dev.js %>/',
-                src: [ '**/*.js' ],
-                dest: '<%= meta.prod.js %>/'
+                src: '<%= meta.dev.js %>/main.js',
+                dest: '<%= meta.prod.js %>/main.js'
             }
         },
         connect: {

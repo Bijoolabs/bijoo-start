@@ -1,5 +1,19 @@
-const pi = 3.14159265359;
+var sum = (a, b = 6) => (a + b);
 
-export var calcCircumference = (radius) => {
-    return 2 * radius * pi;
+var square = (b) => {
+    return b * b;
 };
+
+var variable = 8;
+
+class MyClass {
+    constructor(credentials) {
+        this.name = credentials.name;
+        this.enrollmentNo = credentials.enrollmentNo
+    }
+    getName() {
+        return this.name;
+    }
+}
+
+export { sum, square, variable, MyClass };
