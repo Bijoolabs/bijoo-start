@@ -8,8 +8,6 @@ module.exports = function( grunt ) {
     // load all task listed and speed up build process
     require( 'jit-grunt' )( grunt );
 
-    var shims = require("./shims");
-
     // Project configuration
     grunt.initConfig( {
         pkg: grunt.file.readJSON( 'package.json' ),

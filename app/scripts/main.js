@@ -16,8 +16,8 @@ console.log(x.getName());
 // Load jQuery has module, and use it
 var $ = require('jquery');
 
-// $(document).on('ready', function(){
+$(document).on('ready', function(){
 
-//     console.log('pouet');
+    console.log('pouet');
 
-// });
+});
