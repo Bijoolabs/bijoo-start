@@ -4,7 +4,7 @@ import {sum, square, variable, MyClass} from './modules/common_module.js';
 console.log(square(5));
 
 var cred = {
-    name: 'Ritesh Kumar',
+    name: 'Ritesh Kumaro',
     enrollmentNo: 11115078
 }
 
