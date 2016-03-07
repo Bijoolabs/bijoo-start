@@ -10,9 +10,10 @@
     "build:js": "browserify app/scripts/main.js -o build/scripts/main.js -t [ babelify --presets [ es2015 ] ]",
     "build:css": "postcss -u postcss-import -u postcss-custom-properties -u postcss-calc -u postcss-custom-media -u postcss-media-minmax -u postcss-custom-selectors -u postcss-color-function -u postcss-selector-matches -u postcss-selector-not -u postcss-nested -u autoprefixer '> 1%' 'IE 9' -o build/styles/main.css app/styles/main.css",
     "build:images": "imagemin app/images/** build/images/ -p",
-    "watch": "parallelshell \"npm run watch:js\" \"npm run watch:css\"",
+    "watch": "parallelshell \"npm run livereload\" \"npm run watch:js\" \"npm run watch:css\"",
     "watch:js": "watch \"npm run build:js -s\" app/scripts/",
-    "watch:css": "watch \"npm run build:css -s\" app/styles/"
+    "watch:css": "watch \"npm run build:css -s\" app/styles/",
+    "livereload": "livereloadx -p 35729 build/"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
