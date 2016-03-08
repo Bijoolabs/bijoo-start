@@ -8,7 +8,7 @@ var variable = 8;
 
 class MyClass {
     constructor(credentials) {
-        this.name = credentials.name;
+        this.name = credentials.name || "Anonymous";
         this.enrollmentNo = credentials.enrollmentNo
     }
     getName() {

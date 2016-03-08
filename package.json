@@ -18,7 +18,8 @@
     "critical": "critical http://getbootstrap.com/ > build/styles/critical.css -m",
     "lint": "npm run jslint & npm run csslint",
     "jslint": "eslint -c conf/.eslintrc app/scripts/main.js app/scripts/modules/**",
-    "csslint": "stylelint app/styles/main.css app/styles/modules/*.css --config conf/.stylelintrc"
+    "csslint": "stylelint app/styles/main.css app/styles/modules/*.css --config conf/.stylelintrc",
+    "test": "mocha test/"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
@@ -32,6 +33,7 @@
     "grunt-uncss": "^0.5.0",
     "imagemin": "^4.0.0",
     "livereloadx": "^0.3.9",
+    "mocha": "^2.4.5",
     "parallelshell": "^2.0.0",
     "postcss": "^5.0.18",
     "postcss-calc": "^5.2.0",
