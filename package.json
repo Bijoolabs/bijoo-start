@@ -16,6 +16,7 @@
     "watch:css": "watch \"npm run build:css -s\" app/styles/",
     "livereload": "livereloadx -p 35729 build/",
     "critical": "critical http://getbootstrap.com/ > build/styles/critical.css -m",
+    "lint": "npm run jslint & npm run csslint",
     "jslint": "eslint -c conf/.eslintrc app/scripts/main.js app/scripts/modules/**",
     "csslint": "stylelint app/styles/main.css app/styles/modules/*.css --config conf/.stylelintrc"
   },
