@@ -5,16 +5,17 @@
   "author": "BijooLabs",
   "private": true,
   "scripts": {
-    "setup": "rimraf build && mkdir build && cd build && mkdir scripts styles images && npm run build",
+    "clean": "rimraf build",
+    "setup": "npm run clean && mkdir build && cd build && mkdir scripts styles images && npm run build",
     "build": "npm run build:js -s & npm run build:css -s & npm run build:images -s",
     "build:js": "browserify app/scripts/main.js -o build/scripts/main.js -t [ babelify --presets [ es2015 ] ]",
-    "build:css": "postcss -u postcss-import -u postcss-custom-properties -u postcss-calc -u postcss-custom-media -u postcss-media-minmax -u postcss-custom-selectors -u postcss-color-function -u postcss-selector-matches -u postcss-selector-not -u postcss-nested -u autoprefixer '> 1%' 'IE 9' -o build/styles/main.css app/styles/main.css",
+    "build:css": "postcss -u postcss-import -u postcss-custom-properties -u postcss-calc -u postcss-custom-media -u postcss-media-minmax -u postcss-custom-selectors -u postcss-color-function -u postcss-selector-matches -u postcss-selector-not -u postcss-nested -u autoprefixer --autoprefixer.browsers \"> 1%\" \"IE 9\" -u postcss-neat --postcss-neat.neatMaxWidth \"100%\" -o build/styles/main.css app/styles/main.css",
     "build:images": "imagemin app/images/** build/images/ -p",
     "watch": "parallelshell \"npm run livereload\" \"npm run watch:js\" \"npm run watch:css\"",
     "watch:js": "watch \"npm run build:js -s\" app/scripts/",
     "watch:css": "watch \"npm run build:css -s\" app/styles/",
     "livereload": "livereloadx -p 35729 build/",
-    "critical": "critical http://getbootstrap.com/ -m"
+    "critical": "critical http://getbootstrap.com/ > build/styles/critical.css -m"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
