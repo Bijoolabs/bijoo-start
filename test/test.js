@@ -1,30 +1,20 @@
-var assert = require("assert");
-var MyClass = require("../build/scripts/main.js").MyClass;
+import { sum, square, variable, MyClass } from '../app/scripts/modules/common_module.js';
 
-describe("MyClass", function(){
+describe('ES6 Foo', function () {
 
-  describe("constructor", function(){
-    it("should have a default name", function(){
-      var myclass = new MyClass();
-      assert.equal("Anonymous", myclass.getName());
+    let foo;
+
+    var cred = {
+        name: 'Ritesh Kumaro',
+        enrollmentNo: 11115078
+    }
+
+    beforeEach(()=>{
+        foo = new MyClass(cred);
     });
-  });
 
-//   describe("#writeArticle", function(){
-//     it("should store articles", function(){
-//       var author = new Author();
-//       assert.equal(0, author.articles.length);
-//       author.writeArticle("test article");
-//       assert.equal(1, author.articles.length);
-//     });
-//   });
-
-//   describe("#listArticles", function(){
-//     it("should list articles", function(){
-//       var author = new Author("Jim");
-//       author.writeArticle("a great article");
-//       assert.equal("Jim has written: a great article", author.listArticles());
-//     });
-//   });
+    it('should return Do Something when calling doSomething', ()=>{
+        expect(foo.getName()).toEqual('Ritesh Kumaro');
+    });
 
 });
