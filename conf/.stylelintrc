@@ -10,6 +10,21 @@
         "declaration-colon-newline-after": "always-multi-line",
         "selector-list-comma-newline-after": "always",
         "selector-no-attribute": true,
-        "declaration-block-properties-order":["padding", "padding-top", "padding-right", "padding-bottom", "padding-left", "color"]
+        "declaration-block-properties-order":[
+            {
+                emptyLineBefore: "always",
+                properties: [
+                    "height",
+                    "width",
+                ],
+            },
+            {
+                emptyLineBefore: "always",
+                properties: [
+                    "font-size",
+                    "font-weight",
+                ]
+            }
+        ]
     }
 }
