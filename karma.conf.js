@@ -10,7 +10,7 @@ module.exports = function(config) {
 
     // frameworks to use
     // available frameworks: https://npmjs.org/browse/keyword/karma-adapter
-    frameworks: ['browserify', 'jasmine-jquery', 'jasmine'],
+    frameworks: [ 'jasmine-jquery', 'jasmine', 'browserify' ],
 
 
     // list of files / patterns to load in the browser
@@ -23,6 +23,8 @@ module.exports = function(config) {
       'app/scripts/main.js',
       'test/*.js',
 
+      // Fixture
+      'test/*.html'
     ],
 
 
@@ -77,6 +79,13 @@ module.exports = function(config) {
     // start these browsers
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
     browsers: ['PhantomJS'],
+    
+    plugins: [
+      'karma-browserify',
+      'karma-phantomjs-launcher',
+      'karma-jasmine-jquery',
+      'karma-jasmine'
+    ],
 
 
     // Continuous Integration mode

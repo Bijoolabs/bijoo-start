@@ -20,8 +20,8 @@ $(document).on('ready', function(){
 
     console.log('pouet');
 
-    // $('.button_1').on('click', function(){
-    //     $('#turn').text('button 1 click');
-    // });
+    $('.button_1').on('click', function(){
+        $('#turn').text('button 1 click');
+    });
 
 });
