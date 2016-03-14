@@ -31,8 +31,17 @@
     "eslint": "~2.2.0",
     "grunt-uncss": "^0.5.0",
     "imagemin": "^4.0.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-browserify": "^5.0.2",
+    "karma-cli": "^0.1.2",
+    "karma-fixture": "^0.2.6",
+    "karma-jasmine": "^0.3.7",
+    "karma-jasmine-jquery": "^0.1.1",
+    "karma-phantomjs-launcher": "^1.0.0",
     "livereloadx": "^0.3.9",
     "parallelshell": "^2.0.0",
+    "phantomjs-prebuilt": "^2.1.5",
     "postcss": "^5.0.18",
     "postcss-calc": "^5.2.0",
     "postcss-cli": "^2.5.1",
@@ -52,15 +61,15 @@
     "stylelint": "^5.0.0",
     "watch": "^0.17.1"
   },
+  "browserify": {
+    "transform": [
+      "browserify-shim"
+    ]
+  },
   "browser": {
     "jquery": "/vendor/jquery-2.2.0.min.js"
   },
   "browserify-shim": {
     "jquery": "global:$"
-  },
-  "browserify": {
-    "transform": [
-      "browserify-shim"
-    ]
   }
 }
