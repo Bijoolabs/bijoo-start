@@ -1,32 +1,23 @@
-// add require to global namespace for eslint
-/*global require*/
-// Load common vendor and app modules
-define([
-    // Vendor
-    'jquery',
+import {sum, square, variable, MyClass} from './modules/common_module.js';
 
-    // Plugins
-    'commonPlugin',
+// 25
+console.log(square(5));
 
-    //modules
-    'commonModule'
+var cred = {
+    name: 'Ritesh Kumaro',
+    enrollmentNo: 11115078
+}
 
-], function () {
-    'use strict';
+var x = new MyClass(cred);
 
-    // Init project namespace
-    var PROJECT_NAMESPACE = PROJECT_NAMESPACE || {};
+//Ritesh Kumar
+console.log(x.getName());
 
-    PROJECT_NAMESPACE.option = {
-        option_1: 'string', // String
-        option_2: 5, // Value
-        option_3: null, // null
-        option_4: function(){ // Function
-            return this.option_1; // Previous defined var
-        }
-    };
+// Load jQuery has module, and use it
+var $ = require('jquery');
 
-    PROJECT_NAMESPACE.init = function(){};
+$(document).on('ready', function(){
 
-    PROJECT_NAMESPACE.init();
+    console.log('pouet');
+
 });

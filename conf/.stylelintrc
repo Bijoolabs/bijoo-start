@@ -6,38 +6,24 @@
         "declaration-colon-space-after": "always",
         "declaration-colon-space-before": "never",
         "declaration-block-semicolon-newline-after": "always",
-        "rule-trailing-semicolon": "always",
+        "declaration-block-trailing-semicolon": "always",
         "declaration-colon-newline-after": "always-multi-line",
         "selector-list-comma-newline-after": "always",
         "selector-no-attribute": true,
-        "rule-properties-order": [
+        "declaration-block-properties-order":[
             {
-                emptyLineBefore: true,
+                emptyLineBefore: "always",
                 properties: [
-                    "position",
-                    "z-index",
-                    "top",
-                    "right",
-                    "bottom",
-                    "left"
-                ]
-            },
-            {
-                emptyLineBefore: true,
-                properties: [
-                    "display",
-                    "overflow",
-                    "box-sizing",
                     "height",
                     "width",
-                    "margin",
-                    "border",
-                    "padding"
                 ],
-                {
-                    emptyLineBefore: true,
-                    unspecified: "bottom"
-                }
+            },
+            {
+                emptyLineBefore: "always",
+                properties: [
+                    "font-size",
+                    "font-weight",
+                ]
             }
         ]
     }

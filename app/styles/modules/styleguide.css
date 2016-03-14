@@ -17,7 +17,7 @@ body {
 
 body {
     font: 1.2em/1.6em Arial, sans-serif;
-    background-color: #FFF;
+    background-color: #fff;
     color: #000;
 }
 
@@ -101,12 +101,14 @@ time {
 .wrapper {}
 
 .container {
-    max-width: 1280px;
-    margin: 0 auto;
-    padding: 20px;
+    @neat-outer-container;
+    padding-top: 1em;
+    padding: 0.5em;
 }
 
-.mainContent {}
+.mainContent {
+    @neat-span-columns 6;
+}
 .innerContainer {}
 .innerContent {}
 
@@ -147,6 +149,7 @@ time {
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 
 .btn1 {
+    transition: transform 1s;
 }
 
 /*  Lists

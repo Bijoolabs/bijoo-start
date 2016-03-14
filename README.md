@@ -1,11 +1,11 @@
 # Bijoo Start
 
-Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool websites made with [Grunt](http://gruntjs.com/), [PostCSS](https://github.com/postcss/postcss), [RequireJS](http://requirejs.org/), [BEM](https://en.bem.info/) and our best practices.
+Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool websites made with pure NPM CLI, [PostCSS](https://github.com/postcss/postcss), ES6 with [Babel](https://babeljs.io/) bundled with [Browserify](http://browserify.org/), [BEM](https://en.bem.info/) and our best practices.
 
 ## Features
 
-* A Gruntfile with all needed tasks (concat, ulgify, imagemin, etc.) for development and production.
-* A RequireJS set up to load JS modules and libraries asynchronously.
+* All needed tasks are managed by NPM (concat, ulgify, imagemin, etc.) for development and production.
+* ES6 / ECMA2015.
 * Modular structure for CSS and JS files.
 * PostCSS to extend CSS possibilities (import, autoprefix, vars, etc.).
 * Last [jQuery 2](https://jquery.com/download/) version.
@@ -16,10 +16,6 @@ Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool 
 ## Getting started
 
 * Install [NodeJS](http://nodejs.org/download/)
-* Install [Grunt](https://github.com/gruntjs/grunt)
-```shell
-npm install -g grunt-cli
-```
 * (Optional) Install [PhantomJS](http://phantomjs.org/download.html)
 Run installer.exe
 * Install the npm dependencies
@@ -27,24 +23,24 @@ Run installer.exe
 cd path/to/project
 npm install
 ```
-* Launch default Grunt task
+* Launch default NPM Script
 ```shell
-grunt
+npm run setup
 ```
 
 ## Grunt Tasks
 
-* GRUNT : default task to clean, postCSS, concat, copy, imagemin with source maps.
+* NPM : default task to clean, postCSS, concat, copy, imagemin with source maps.
 ```shellss
-grunt
+npm run setup
 ```
-* GRUNT LINT : to lint CSS and JS files.
+* NPM Watch and livereload.
 ```shellss
-grunt lint
+npm run watch
 ```
-* GRUNT PROD : to clean, postCSS, uglify, concat, critical CSS, copy and images optimization.
+* NPM LINT : to lint CSS and JS files.
 ```shellss
-grunt prod
+npm run lint
 ```
 
 ## BEM

@@ -21,13 +21,14 @@
             !function(e){"use strict";var n=function(n,t,o){var l,r=e.document,i=r.createElement("link");if(t)l=t;else{var a=(r.body||r.getElementsByTagName("head")[0]).childNodes;l=a[a.length-1]}var d=r.styleSheets;i.rel="stylesheet",i.href=n,i.media="only x",l.parentNode.insertBefore(i,t?l:l.nextSibling);var f=function(e){for(var n=i.href,t=d.length;t--;)if(d[t].href===n)return e();setTimeout(function(){f(e)})};return i.onloadcssdefined=f,f(function(){i.media=o||"all"}),i};"undefined"!=typeof module?module.exports=n:e.loadCSS=n}("undefined"!=typeof global?global:this);
 
             // dist/css/critical.css
-            loadCSS( "path/to/mycriticalstylesheet.css" );
+            // loadCSS( "path/to/mycriticalstylesheet.css" );
         </script>
 
     </head>
 
     <body>
         <div class="wrapper">
+
             <div class="container">
                 <!-- Header -->
                 <header class="mainHeader">
@@ -36,6 +37,22 @@
 
                 <!-- Page content -->
                 <main class="mainContent">
+                    <div class="player" id="player_1">
+                        <h1>player 1</h1>
+                        <button class="button_1">Button</button>
+                        <button class="button_2">Button</button>
+                        <button class="button_3">Button</button>
+                        <button class="button_4">Button</button>
+                        <button class="button_5">Button</button>
+                    </div>
+                    <div class="player" id="player_2">
+                        <h1>player 2</h1>
+                        <button class="button_1">button</button>
+                        <button class="button_2">button</button>
+                        <button class="button_3">button</button>
+                        <button class="button_4">button</button>
+                        <button class="button_5">button</button>
+                    </div>
                 </main>
 
                 <!-- Footer -->
@@ -44,6 +61,13 @@
         </div>
 
         <link rel="stylesheet" href="build/styles/main.css">
-        <script data-main="build/scripts/build" src="build/scripts/vendor/require.js"></script>
+
+        <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+
+        <script src="build/scripts/main.js"></script>
+
+        <script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=2"></' + 'script>')</script>
+
+
     </body>
 </html>
