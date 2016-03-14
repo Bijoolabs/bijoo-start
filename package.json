@@ -28,8 +28,7 @@
     "browserify": "^13.0.0",
     "browserify-shim": "^3.8.12",
     "critical": "^0.7.1",
-    "eslint": "~2.2.0",
-    "grunt-uncss": "^0.5.0",
+    "eslint": "~2.2",
     "imagemin": "^4.0.0",
     "jasmine-core": "^2.4.1",
     "karma": "^0.13.22",
@@ -58,8 +57,9 @@
     "postcss-selector-matches": "^2.0.1",
     "postcss-selector-not": "^2.0.0",
     "rimraf": "^2.5.2",
-    "stylelint": "^5.0.0",
-    "watch": "^0.17.1"
+    "stylelint": "^5.0.1",
+    "watch": "^0.17.1",
+    "watchify": "^3.7.0"
   },
   "browserify": {
     "transform": [
