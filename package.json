@@ -17,8 +17,9 @@
     "livereload": "livereloadx -p 35729 build/",
     "critical": "critical http://getbootstrap.com/ > build/styles/critical.css -m",
     "lint": "npm run jslint & npm run csslint",
-    "jslint": "eslint -c conf/.eslintrc app/scripts/main.js app/scripts/modules/**",
-    "csslint": "stylelint app/styles/main.css app/styles/modules/*.css --config conf/.stylelintrc"
+    "jslint": "eslint -c conf/.eslintrc app/scripts/main.js app/scripts/modules/** || true",
+    "csslint": "stylelint app/styles/main.css app/styles/modules/*.css --config conf/.stylelintrc || true",
+    "karma": "karma start karma.conf.js"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.3",
