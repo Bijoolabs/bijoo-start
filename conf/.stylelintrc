@@ -14,16 +14,30 @@
             {
                 emptyLineBefore: "always",
                 properties: [
-                    "height",
-                    "width",
-                ],
+                    "position",
+                    "z-index",
+                    "top",
+                    "right",
+                    "bottom",
+                    "left"
+                ]
             },
             {
                 emptyLineBefore: "always",
                 properties: [
-                    "font-size",
-                    "font-weight",
-                ]
+                    "display",
+                    "overflow",
+                    "box-sizing",
+                    "height",
+                    "width",
+                    "margin",
+                    "border",
+                    "padding"
+                ],
+                {
+                    emptyLineBefore: true,
+                    unspecified: "bottom"
+                }
             }
         ]
     }

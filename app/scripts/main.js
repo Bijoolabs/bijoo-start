@@ -14,6 +14,11 @@ var x = new MyClass(cred);
 console.log(x.getName());
 
 // Load jQuery has module, and use it
+
+// if you want dependancy was bundled with all other scripts, require it like that, and remove browserify-shim from package.json
+// var $ = require('./vendor/jquery-2.2.0.min.js');
+// 
+// But if you want your depency stay external, require it like that and add browserify-shim
 var $ = require('jquery');
 
 $(document).on('ready', function(){
