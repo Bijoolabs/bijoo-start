@@ -1,3 +1,4 @@
+/*eslint config: ../../conf/.eslintrc*/
 import {sum, square, variable, MyClass} from './modules/common_module.js';
 
 // 25
@@ -19,14 +20,16 @@ console.log(x.getName());
 // var $ = require('./vendor/jquery-2.2.0.min.js');
 // 
 // But if you want your depency stay external, require it like that and add browserify-shim
-var $ = require('jquery');
+// var $ = require('jquery');
+// or in ES6
+import $ from 'jquery';
 
 $(document).on('ready', function(){
 
-    console.log('pouet');
+console.log('pouet');
 
-    $('.button_1').on('click', function(){
-        $('#turn').text('button 1 click');
-    });
+$('.button_1').on('click', function(){
+$('#turn').text('button 1 click');
+});
 
 });

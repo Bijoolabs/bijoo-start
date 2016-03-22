@@ -23,24 +23,32 @@ Run installer.exe
 cd path/to/project
 npm install
 ```
-* Launch default NPM Script
+* For the first install launch default NPM Script
 ```shell
-npm run setup
+npm run build && npm run server
 ```
 
-## Grunt Tasks
+## NPM Cli Tasks
 
 * NPM : default task to clean, postCSS, concat, copy, imagemin with source maps.
 ```shellss
-npm run setup
+npm run build
 ```
-* NPM Watch and livereload.
+* Browsersync + livereload
 ```shellss
-npm run watch
+npm run server
 ```
 * NPM LINT : to lint CSS and JS files.
 ```shellss
 npm run lint
+```
+* NPM Test : with Karma and Jasmine.
+```shellss
+npm run test
+```
+* NPM en prod
+```shellss
+npm run prod
 ```
 
 ## BEM
