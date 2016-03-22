@@ -13,9 +13,14 @@ Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool 
 * Basic print CSS.
 * Source maps for CSS and JS files.
 
+### Special features for this version
+* Browsersync for localhost/proxy server and sync-livereload on multiple device
+* Karma/Jasmine Unit test and fixture
+
 ## Getting started
 
 * Install [NodeJS](http://nodejs.org/download/)
+* You may need [Python](https://www.python.org/downloads/)
 * (Optional) Install [PhantomJS](http://phantomjs.org/download.html)
 Run installer.exe
 * Install the npm dependencies
@@ -23,7 +28,7 @@ Run installer.exe
 cd path/to/project
 npm install
 ```
-* For the first install launch default NPM Script
+* For the first install : launch default NPM task and run Browsersync local server
 ```shell
 npm run build && npm run server
 ```
