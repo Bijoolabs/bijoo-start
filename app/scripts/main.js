@@ -1,4 +1,4 @@
-/*eslint config: ../../conf/.eslintrc*/
+/*eslint-disable */
 import {sum, square, variable, MyClass} from './modules/common_module.js';
 
 // 25
@@ -12,7 +12,7 @@ var cred = {
 var x = new MyClass(cred);
 
 //Ritesh Kumar
-console.log(x.getName());
+console.log(x.getName()); 
 
 // Load jQuery has module, and use it
 
