@@ -1,4 +1,3 @@
-/*eslint-disable */
 import {sum, square, variable, MyClass} from './modules/common_module.js';
 
 // 25
@@ -29,7 +28,7 @@ $(document).on('ready', function(){
 console.log('pouet');
 
 $('.button_1').on('click', function(){
-$('#turn').text('button 1 click');
+    $('#turn').text('button 1 click');
 });
 
 });
