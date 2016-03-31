@@ -3,6 +3,10 @@
   // Google Javascript Style Guide
   // Source : https://gist.github.com/netpoetica/9ec88fbca204cd0eda22
   "parser": "babel-eslint",
+  "env": {
+      "browser": true,
+      "node": true
+  },
   "rules": {
 
     // Possible Errors
