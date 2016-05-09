@@ -17,7 +17,7 @@ console.log(x.getName());
 
 // if you want dependancy was bundled with all other scripts, require it like that, and remove browserify-shim from package.json
 // var $ = require('./vendor/jquery-2.2.0.min.js');
-// 
+//
 // But if you want your depency stay external, require it like that and add browserify-shim
 // var $ = require('jquery');
 // or in ES6
