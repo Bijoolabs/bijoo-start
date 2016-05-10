@@ -32,3 +32,28 @@ $(document).on('ready', function(){
     });
 
 });
+
+
+// import fetch polyfill
+import 'whatwg-fetch';
+
+// And then just use global variable.
+// Basic pattern for fetch from : https://developers.google.com/web/updates/2015/03/introduction-to-fetch
+
+fetch( 'http://www.omdbapi.com/?t=frozen&y=&plot=short&r=json' )
+    .then(
+        function( response ) {
+            if ( response.status !== 200 ) {
+                console.log('Looks like there was a problem. Status Code: ' + response.status);
+                return;
+            }
+
+            // Examine the text in the response
+            response.json().then( function( data ) {
+                console.log( 'Your response Data', data);
+            });
+        }
+    )
+    .catch( function( err ) {
+        console.log( 'Fetch Error :-S', err );
+    });

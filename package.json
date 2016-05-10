@@ -72,7 +72,8 @@
     "stylelint": "^6.3.3",
     "uglifyify": "^3.0.1",
     "watch": "^0.18.0",
-    "watchify": "^3.7.0"
+    "watchify": "^3.7.0",
+    "whatwg-fetch": "^1.0.0"
   },
   "browserify": {
     "transform": [
