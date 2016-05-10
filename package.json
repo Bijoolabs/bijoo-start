@@ -26,9 +26,8 @@
     "test": "karma start karma.conf.js",
     "start": "npm run build && concurrently -k \"npm run server:setup\" \"npm run watch:js\" \"npm run watch:css\" \"npm run watch:images\"",
     "server:setup": "browser-sync start --server --files \"build/\"",
-    "postbuild:init": "echo 'CSS, JS and Images are well proceced'",
-    "postprod:init": "echo 'CSS, JS and Images are optimised'",
-    "postwatch:js": "echo 'JS are reloaded'"
+    "postbuild:init": "echo 'All assets are well proceced'",
+    "postprod:init": "echo 'All assets are optimised'"
   },
   "devDependencies": {
     "autoprefixer": "^6.3.6",
