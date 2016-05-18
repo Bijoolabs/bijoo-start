@@ -1,11 +1,11 @@
 # Bijoo Start
 
-Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool websites made with [Grunt](http://gruntjs.com/), [PostCSS](https://github.com/postcss/postcss), [RequireJS](http://requirejs.org/), [BEM](https://en.bem.info/) and our best practices.
+Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool websites made with pure NPM CLI, [PostCSS](https://github.com/postcss/postcss), ES6 with [Babel](https://babeljs.io/) bundled with [Browserify](http://browserify.org/), [BEM](https://en.bem.info/) and our best practices.
 
 ## Features
 
-* A Gruntfile with all needed tasks (concat, ulgify, imagemin, etc.) for development and production.
-* A RequireJS set up to load JS modules and libraries asynchronously.
+* All needed tasks are managed by NPM (concat, ulgify, imagemin, etc.) for development and production.
+* ES6 / ECMA2015.
 * Modular structure for CSS and JS files.
 * PostCSS to extend CSS possibilities (import, autoprefix, vars, etc.).
 * Last [jQuery 2](https://jquery.com/download/) version.
@@ -13,13 +13,14 @@ Bijoo Start is a Starter Kit providing basic set up for building Fresh and Cool 
 * Basic print CSS.
 * Source maps for CSS and JS files.
 
+### Special features for this version
+* Browsersync for localhost/proxy server and sync-livereload on multiple device
+* Karma/Jasmine Unit test and fixture
+
 ## Getting started
 
 * Install [NodeJS](http://nodejs.org/download/)
-* Install [Grunt](https://github.com/gruntjs/grunt)
-```shell
-npm install -g grunt-cli
-```
+* You may need [Python](https://www.python.org/downloads/)
 * (Optional) Install [PhantomJS](http://phantomjs.org/download.html)
 Run installer.exe
 * Install the npm dependencies
@@ -27,24 +28,32 @@ Run installer.exe
 cd path/to/project
 npm install
 ```
-* Launch default Grunt task
+* For the first install : launch default NPM task and run Browsersync local server
 ```shell
-grunt
+npm run build && npm run server
 ```
 
-## Grunt Tasks
+## NPM Cli Tasks
 
-* GRUNT : default task to clean, postCSS, concat, copy, imagemin with source maps.
+* NPM : default task to clean, postCSS, concat, copy, imagemin with source maps.
 ```shellss
-grunt
+npm run build
 ```
-* GRUNT LINT : to lint CSS and JS files.
+* Browsersync + livereload
 ```shellss
-grunt lint
+npm run server
 ```
-* GRUNT PROD : to clean, postCSS, uglify, concat, critical CSS, copy and images optimization.
+* NPM LINT : to lint CSS and JS files.
 ```shellss
-grunt prod
+npm run lint
+```
+* NPM Test : with Karma and Jasmine.
+```shellss
+npm run test
+```
+* NPM en prod
+```shellss
+npm run prod
 ```
 
 ## BEM
